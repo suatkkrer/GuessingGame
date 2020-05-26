@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label layoutX="211.0" layoutY="14.0" prefHeight="18.0" prefWidth="156.0" text="Welcome to Guessing Game " textAlignment="CENTER" />
+      <Label layoutX="174.0" layoutY="246.0" prefHeight="46.0" prefWidth="273.0" text="Are you going to play with computer or online?" />
+      <Button fx:id="playWithComp" layoutX="238.0" layoutY="313.0" mnemonicParsing="false" onAction="#playWithComp" prefHeight="26.0" prefWidth="117.0" text="Computer" />
+      <Button fx:id="playOnline" layoutX="238.0" layoutY="348.0" mnemonicParsing="false" onAction="#playOnline" prefHeight="26.0" prefWidth="118.0" text="Online" />
+      <Label layoutX="262.0" layoutY="284.0" text="Please Select" />
+      <TextArea layoutX="6.0" layoutY="45.0" prefHeight="203.0" prefWidth="588.0" text="Purpose of the game :&#10;&#10;If you play against the computer you need to guess 4 digits number. You have 8 chances to guess. &#10;Every time you guess the number you will be informed by computer.&#10;&#10;If you play against the player which is online, firstly you have to select one number which has 4 digits, after&#10;that you need to click search room button. When you click the button you will be redirected to search &#10;room page, you can select any room you want from this page and you can start playing online. The only&#10;difference between play versus computer or online is when you play it online you don't have chance&#10;limit, you are going to play until one player guesses right.&#10;" />
+   </children>
+</AnchorPane>

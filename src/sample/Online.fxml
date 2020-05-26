@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Online">
+   <children>
+      <Label fx:id="usernameLabel" layoutX="212.0" layoutY="22.0" text="Please Enter Your Username" />
+      <TextField fx:id="usernameField" layoutX="226.0" layoutY="53.0" promptText="Username" />
+      <Button fx:id="joinButton" layoutX="249.0" layoutY="335.0" mnemonicParsing="false" onAction="#joinButton" prefHeight="26.0" prefWidth="88.0" text="Join Room" />
+      <Button fx:id="createRoom" layoutX="249.0" layoutY="322.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="26.0" prefWidth="88.0" text="Create Room" visible="false" />
+      <TableView fx:id="table" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="colRoom" prefWidth="306.3999878168106" text="Room Number" />
+          <TableColumn fx:id="colEmpty" minWidth="0.0" prefWidth="291.2000427246094" resizable="false" text="Empty" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
