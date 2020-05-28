@@ -40,7 +40,7 @@ public class OnlineGame implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         printMethod("Your History");
-        printMethod2("Opponent's History");
+//        printMethod2("Opponent's History");
         warning.setVisible(false);
 
     }
@@ -122,16 +122,24 @@ public class OnlineGame implements Initializable {
             warning.setVisible(true);
         } else {
             operations.sendNumberToDatabase(createNumberField.getText(), getSelectedRoom(), online.username());
+            operations.userNumbers(getSelectedRoom());
+            System.out.println(operations.Control);
             operations.joinRoom(getSelectedRoom());
             warning.setVisible(false);
             estimationLabel.setVisible(true);
             textFieldP1.setVisible(true);
-            textFieldP2.setVisible(true);
+//            textFieldP2.setVisible(true);
             sendValues.setVisible(false);
             guessOnline.setVisible(true);
             createNumberField.setVisible(false);
             numberOnline2.setVisible(true);
             enterNumberLabel.setVisible(false);
+
+            if (operations.Control == 1){
+                guessOnline.setDisable(false);
+            } else {
+                guessOnline.setDisable(true);
+            }
         }
     }
 
@@ -144,10 +152,10 @@ public class OnlineGame implements Initializable {
             warning.setVisible(false);
             operations.guessNumber(getSelectedRoom(), numberOnline2.getText(), online.username());
 
+
+
             String number = operations.number1;
             String estimation = operations.estimation;
-            System.out.println(number + " " + estimation);
-
 
             while (true) {
 

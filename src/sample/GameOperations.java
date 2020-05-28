@@ -10,6 +10,7 @@ public class GameOperations {
     String estimation = null;
     String number1 = null;
     int empty = 0;
+    int Control = 0;
 
     public String getEstimation() {
         return estimation;
@@ -129,9 +130,23 @@ public class GameOperations {
 
     }
 
-    public void guessNumber(int room_id,String number,String userName) throws SQLException {
+    public void userNumbers(int room_id) throws SQLException {
+        statement = con.createStatement();
+        String user1Numb = null;
+        String user2Numb = null;
+        String room = "Select * From room where roomNumb = " + room_id;
+        ResultSet rs = statement.executeQuery(room);
 
-        OnlineGame onlineGame1 = new OnlineGame();
+        while (rs.next()){
+            user1Numb = rs.getString("user1Number");
+            user2Numb = rs.getString("user2Number");
+        }
+        if (user1Numb != null && user2Numb != null){
+            Control = 1;
+        }
+    }
+
+    public void guessNumber(int room_id,String number,String userName) throws SQLException {
 
         statement = con.createStatement();
         statement1 = con.createStatement();

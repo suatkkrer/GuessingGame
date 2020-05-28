@@ -11,8 +11,10 @@
       <Button fx:id="createRoom" layoutX="249.0" layoutY="322.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="26.0" prefWidth="88.0" text="Create Room" visible="false" />
       <TableView fx:id="table" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <columns>
-          <TableColumn fx:id="colRoom" prefWidth="306.3999878168106" text="Room Number" />
-          <TableColumn fx:id="colEmpty" minWidth="0.0" prefWidth="291.2000427246094" resizable="false" text="Empty" />
+          <TableColumn fx:id="colRoom" prefWidth="227.0" text="Room Number" resizable="false" />
+            <TableColumn fx:id="colUser2" prefWidth="120.0" text="User 1" resizable="false" />
+          <TableColumn fx:id="colEmpty" minWidth="0.0" prefWidth="127.0" resizable="false" text="Empty" />
+            <TableColumn fx:id="colUser1" prefWidth="120.0" text="User 2" resizable="false" />
         </columns>
       </TableView>
    </children>

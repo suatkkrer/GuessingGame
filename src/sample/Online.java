@@ -29,6 +29,10 @@ public class Online implements Initializable {
     @FXML
     private TableColumn<ModelRoom, String> colEmpty;
     @FXML
+    private TableColumn <ModelRoom, Integer> colUser1;
+    @FXML
+    private TableColumn <ModelRoom, Integer> colUser2;
+    @FXML
     private Label usernameLabel;
     @FXML
     private TextField usernameField;
@@ -65,9 +69,11 @@ public class Online implements Initializable {
         }
 
         try {
+            assert connection != null;
             ResultSet rs = connection.createStatement().executeQuery("select * from room");
             while (rs.next()){
-                observableList.add(new ModelRoom(rs.getInt("roomNumb"),rs.getInt("isEmpty")));
+                observableList.add(new ModelRoom(rs.getInt("roomNumb"),rs.getInt("isEmpty")
+                        ,rs.getInt("user_fk"), rs.getInt("user_fk2")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,6 +81,8 @@ public class Online implements Initializable {
 
         colRoom.setCellValueFactory(new PropertyValueFactory<>("roomNumb"));
         colEmpty.setCellValueFactory(new PropertyValueFactory<>("isEmpty"));
+        colUser1.setCellValueFactory(new PropertyValueFactory<>("user_fk"));
+        colUser2.setCellValueFactory(new PropertyValueFactory<>("user_fk2"));
 
         table.setItems(observableList);
     }
@@ -106,7 +114,6 @@ public class Online implements Initializable {
         } catch (Exception e){
             usernameLabel.setText("Please Enter Different Username");
         }
-
         ModelRoom selectedModel = table.getSelectionModel().getSelectedItem();
         onlineGame.setSelectedRoom(selectedModel.getRoomNumb());
         Stage stage3 = new Stage();
