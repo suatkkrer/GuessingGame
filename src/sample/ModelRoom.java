@@ -10,7 +10,7 @@ public class ModelRoom {
         this.roomNumb = roomNumb;
         this.isEmpty = isEmpty;
         this.user_fk = user_fk;
-        this.user_fk = user_fk2;
+        this.user_fk2 = user_fk2;
 
     }
 

@@ -5,16 +5,20 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Online">
    <children>
-      <Label fx:id="usernameLabel" layoutX="212.0" layoutY="22.0" text="Please Enter Your Username" />
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3D4956;">
+         <children>
+            <AnchorPane layoutY="69.0" prefHeight="131.0" prefWidth="200.0" />
+            <Label fx:id="usernameLabel" layoutX="226.0" layoutY="22.0" text="Please Enter Your Username" textFill="WHITE" />
+         </children></AnchorPane>
       <TextField fx:id="usernameField" layoutX="226.0" layoutY="53.0" promptText="Username" />
-      <Button fx:id="joinButton" layoutX="249.0" layoutY="335.0" mnemonicParsing="false" onAction="#joinButton" prefHeight="26.0" prefWidth="88.0" text="Join Room" />
+      <Button fx:id="joinButton" layoutX="249.0" layoutY="335.0" mnemonicParsing="false" onAction="#joinButton" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #eda678; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Join Room" />
       <Button fx:id="createRoom" layoutX="249.0" layoutY="322.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="26.0" prefWidth="88.0" text="Create Room" visible="false" />
       <TableView fx:id="table" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <columns>
-          <TableColumn fx:id="colRoom" prefWidth="227.0" text="Room Number" resizable="false" />
-            <TableColumn fx:id="colUser2" prefWidth="120.0" text="User 1" resizable="false" />
-          <TableColumn fx:id="colEmpty" minWidth="0.0" prefWidth="127.0" resizable="false" text="Empty" />
-            <TableColumn fx:id="colUser1" prefWidth="120.0" text="User 2" resizable="false" />
+          <TableColumn fx:id="colRoom" prefWidth="227.0" resizable="false" style="-fx-background-color: #D5DEA0;" text="Room Number" />
+            <TableColumn fx:id="colUser1" prefWidth="120.0" resizable="false" style="-fx-background-color: DBC288;" text="User 1" />
+          <TableColumn fx:id="colEmpty" minWidth="0.0" prefWidth="127.0" resizable="false" style="-fx-background-color: #D5DEA0;" text="Empty" />
+            <TableColumn fx:id="colUser2" prefWidth="120.0" resizable="false" style="-fx-background-color: DBC288;" text="User 2" />
         </columns>
       </TableView>
    </children>

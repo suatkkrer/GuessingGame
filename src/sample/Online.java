@@ -67,7 +67,6 @@ public class Online implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         try {
             assert connection != null;
             ResultSet rs = connection.createStatement().executeQuery("select * from room");
@@ -95,11 +94,6 @@ public class Online implements Initializable {
         return usernameField.getText();
     }
 
-//    @FXML
-//    public void createButton() throws SQLException {
-//        gameOperations.createRoom();
-//    }
-
     @FXML
     public void joinButton() throws IOException, SQLException {
         setUserName(getUsernameField().getText());
@@ -107,19 +101,23 @@ public class Online implements Initializable {
         Parent root3 = (Parent) fxmlLoader3.load();
         OnlineGame onlineGame = fxmlLoader3.getController();
         onlineGame.setOnline(this);
-        onlineGame.myFunction(usernameField.getText());
-        gameOperations.createRoom();
-        try {
-            gameOperations.sendValuesToDatabase(usernameField.getText());
-        } catch (Exception e){
-            usernameLabel.setText("Please Enter Different Username");
+        if (usernameField.getText().length() == 0) {
+            usernameLabel.setText("Username field can not be empty");
+        } else {
+            onlineGame.myFunction(usernameField.getText());
+            gameOperations.createRoom();
+            try {
+                gameOperations.sendValuesToDatabase(usernameField.getText());
+            } catch (Exception e) {
+                usernameLabel.setText("Please Enter Different Username");
+            }
+            ModelRoom selectedModel = table.getSelectionModel().getSelectedItem();
+            onlineGame.setSelectedRoom(selectedModel.getRoomNumb());
+            Stage stage3 = new Stage();
+            stage3.setScene(new Scene(root3));
+            stage3.setTitle("Guessing Game");
+            stage3.show();
+            Controller.getStage().close();
         }
-        ModelRoom selectedModel = table.getSelectionModel().getSelectedItem();
-        onlineGame.setSelectedRoom(selectedModel.getRoomNumb());
-        Stage stage3 = new Stage();
-        stage3.setScene(new Scene(root3));
-        stage3.setTitle("Guessing Game");
-        stage3.show();
-        Controller.getStage().close();
     }
 }
