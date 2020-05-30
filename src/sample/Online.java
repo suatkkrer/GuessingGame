@@ -71,6 +71,7 @@ public class Online implements Initializable {
         try {
             assert connection != null;
             ResultSet rs = connection.createStatement().executeQuery("select * from room");
+
             while (rs.next()){
                 observableList.add(new ModelRoom(rs.getInt("roomNumb"),rs.getInt("isEmpty")
                         ,rs.getInt("user_fk"), rs.getInt("user_fk2")));

@@ -5,17 +5,17 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.OnlineGame">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3D4956;">
+      <AnchorPane layoutX="1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3D4956;">
          <children>
             <Label fx:id="labelName" layoutX="231.0" layoutY="21.0" prefHeight="18.0" prefWidth="194.0" text="Label" textFill="WHITE" />
-            <Label fx:id="warning" layoutX="120.0" layoutY="58.0" prefHeight="18.0" prefWidth="387.0" text="Label" textFill="WHITE" />
+            <Label fx:id="warning" layoutX="106.0" layoutY="63.0" prefHeight="18.0" prefWidth="387.0" text="Label" textFill="WHITE" />
+            <TextField fx:id="createNumberField" layoutX="226.0" layoutY="124.0" promptText="Your Number" />
+            <Label fx:id="enterNumberLabel" layoutX="198.0" layoutY="95.0" prefHeight="18.0" prefWidth="203.0" text="Please Enter Your 4 Digits Number" textFill="WHITE" />
+            <TextField fx:id="numberOnline2" layoutX="226.0" layoutY="124.0" visible="false" />
+            <TextArea fx:id="textFieldP1" editable="false" layoutX="21.0" layoutY="200.0" prefHeight="175.0" prefWidth="558.0" visible="false" />
+            <Label fx:id="estimationLabel" layoutX="198.0" layoutY="91.0" prefHeight="26.0" prefWidth="296.0" text="Please Enter Your Estimation 4 Digits" textFill="WHITE" visible="false" />
          </children></AnchorPane>
-      <Button fx:id="guessOnline" layoutX="253.0" layoutY="119.0" mnemonicParsing="false" onAction="#guessOnline" prefHeight="26.0" prefWidth="93.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-background-color: #eda678;" text="Guess" visible="false" />
-      <TextField fx:id="numberOnline2" layoutX="226.0" layoutY="75.0" visible="false" />
-      <TextArea fx:id="textFieldP1" editable="false" layoutX="26.0" layoutY="164.0" prefHeight="200.0" prefWidth="548.0" visible="false" />
-      <Label fx:id="estimationLabel" layoutX="203.0" layoutY="49.0" prefHeight="26.0" prefWidth="296.0" text="Please Enter Your Estimation 4 Digits" textFill="WHITE" visible="false" />
-      <Label fx:id="enterNumberLabel" layoutX="212.0" layoutY="91.0" prefHeight="18.0" prefWidth="203.0" text="Please Enter Your 4 Digits Number" textFill="WHITE" />
-      <TextField fx:id="createNumberField" layoutX="226.0" layoutY="119.0" promptText="Your Number" />
+      <Button fx:id="guessOnline" layoutX="253.0" layoutY="164.0" mnemonicParsing="false" onAction="#guessOnline" prefHeight="26.0" prefWidth="93.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-background-color: #eda678;" text="Guess" visible="false" />
       <Button fx:id="sendValues" layoutX="252.0" layoutY="164.0" mnemonicParsing="false" onAction="#sendValues" prefHeight="26.0" prefWidth="94.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: #eda678;" text="Enter" />
    </children>
 </AnchorPane>

@@ -1,6 +1,8 @@
 package sample;
 
 import java.sql.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class GameOperations {
     private Statement statement = null;
@@ -116,7 +118,7 @@ public class GameOperations {
         statement2.executeUpdate(query2);
     }
 
-    public void bringNumber(int room_id,String number,String userName) throws SQLException {
+    public void bringNumber(int room_id) throws SQLException {
         statement = con.createStatement();
         statement1 = con.createStatement();
         statement2 = con.createStatement();
@@ -126,8 +128,18 @@ public class GameOperations {
         int user1 = 0;
 
         String room = "Select * From room where roomNumb = " + room_id;
-        String userID = "Select * From user where Username = '" + userName + "'";
 
+    }
+
+    public void timer(int room_id){
+
+        Timer myTimer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+
+            }
+        };
     }
 
     public void userNumbers(int room_id) throws SQLException {

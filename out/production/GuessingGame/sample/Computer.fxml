@@ -5,7 +5,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Computer">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3D4956;" />
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3D4956;">
+         <children>
+            <Label layoutX="198.0" layoutY="23.0" prefHeight="18.0" prefWidth="223.0" text="Please Enter Your 4 Digits Estimation" textFill="WHITE" />
+         </children></AnchorPane>
       <TextField fx:id="guessedNum" layoutX="225.0" layoutY="53.0" />
       <Button fx:id="sendNumber" layoutX="247.0" layoutY="99.0" mnemonicParsing="false" onAction="#sendNumb" prefHeight="26.0" prefWidth="104.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-background-color: #eda678;" text="Guess" />
       <TextArea fx:id="guessHistory" editable="false" layoutX="28.0" layoutY="152.0" prefHeight="232.0" prefWidth="543.0" style="-fx-border-color: #eda678;" />
