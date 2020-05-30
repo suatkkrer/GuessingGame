@@ -114,11 +114,15 @@ public class Online implements Initializable {
             }
             ModelRoom selectedModel = table.getSelectionModel().getSelectedItem();
             onlineGame.setSelectedRoom(selectedModel.getRoomNumb());
-            Stage stage3 = new Stage();
-            stage3.setScene(new Scene(root3));
-            stage3.setTitle("Guessing Game");
-            stage3.show();
-            Controller.getStage().close();
+            if (selectedModel.getIsEmpty() == 2){
+                usernameLabel.setText("Room is Full Please Select Another Room");
+            } else {
+                Stage stage3 = new Stage();
+                stage3.setScene(new Scene(root3));
+                stage3.setTitle("Guessing Game");
+                stage3.show();
+                Controller.getStage().close();
+            }
         }
     }
 }
