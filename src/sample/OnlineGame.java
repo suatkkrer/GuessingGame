@@ -106,7 +106,6 @@ public class OnlineGame implements Initializable {
                 printMethod2("Your estimation is " + numberOnline2.getText());
                 wrongPlace = 0;
                 break;
-
             } else {
                 printMethod2("Your estimation is " + numberOnline2.getText());
                 wrongPlace = 0;
@@ -117,10 +116,23 @@ public class OnlineGame implements Initializable {
 
     public void sendValues() throws SQLException {
 
-        if (createNumberField.getText().length() != 4) {
-            warning.setText("Please enter 4 digits number");
+        int z = 0;
+
+        String[] controlArray = createNumberField.getText().split("");
+
+        for (int i = 0; i < controlArray.length ; i++) {
+            for (int j = i+1; j <controlArray.length ; j++) {
+             if (controlArray[i].equals(controlArray[j])){
+                 z = 1;
+                 }
+            }
+        }
+
+        if (createNumberField.getText().length() != 4 || z == 1) {
+            warning.setText("Please enter 4 digits number and numbers should be different");
             warning.setVisible(true);
         } else {
+
             operations.sendNumberToDatabase(createNumberField.getText(), getSelectedRoom(), online.username());
             operations.userNumbers(getSelectedRoom());
             System.out.println(operations.Control);
@@ -151,8 +163,6 @@ public class OnlineGame implements Initializable {
         } else {
             warning.setVisible(false);
             operations.guessNumber(getSelectedRoom(), numberOnline2.getText(), online.username());
-
-
 
             String number = operations.number1;
             String estimation = operations.estimation;

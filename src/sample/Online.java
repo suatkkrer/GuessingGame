@@ -67,6 +67,7 @@ public class Online implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         try {
             assert connection != null;
             ResultSet rs = connection.createStatement().executeQuery("select * from room");

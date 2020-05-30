@@ -16,7 +16,7 @@
       <TableView fx:id="table" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <columns>
           <TableColumn fx:id="colRoom" prefWidth="227.0" resizable="false" style="-fx-background-color: #D5DEA0;" text="Room Number" />
-            <TableColumn fx:id="colUser1" prefWidth="120.0" resizable="false" style="-fx-background-color: A0DECD;" text="User 1" />
+            <TableColumn fx:id="colUser1" prefWidth="120.0" resizable="false" style="-fx-background-color: DBC288;" text="User 1" />
           <TableColumn fx:id="colEmpty" minWidth="0.0" prefWidth="127.0" resizable="false" style="-fx-background-color: #D5DEA0;" text="Empty" />
             <TableColumn fx:id="colUser2" prefWidth="120.0" resizable="false" style="-fx-background-color: DBC288;" text="User 2" />
         </columns>
