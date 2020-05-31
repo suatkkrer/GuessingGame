@@ -7,6 +7,8 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class OnlineGame implements Initializable {
     Online online = new Online();
@@ -147,11 +149,23 @@ public class OnlineGame implements Initializable {
             numberOnline2.setVisible(true);
             enterNumberLabel.setVisible(false);
 
-            if (operations.Control == 1){
-                guessOnline.setDisable(false);
-            } else {
-                guessOnline.setDisable(true);
-            }
+            Timer myTimer = new Timer();
+            TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    try {
+                        operations.userNumbers(getSelectedRoom());
+                        if (operations.Control == 1){
+                            guessOnline.setDisable(false);
+                        } else {
+                            guessOnline.setDisable(true);
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            myTimer.schedule(task,0,2000);
         }
     }
 
@@ -212,7 +226,6 @@ public class OnlineGame implements Initializable {
                     printMethod("Your estimation is " + numberOnline2.getText());
                     wrongPlace = 0;
                     break;
-
                 }
             }
         }

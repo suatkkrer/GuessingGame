@@ -74,7 +74,7 @@ public class Online implements Initializable {
 
             while (rs.next()){
                 observableList.add(new ModelRoom(rs.getInt("roomNumb"),rs.getInt("isEmpty")
-                        ,rs.getInt("user_fk"), rs.getInt("user_fk2")));
+                        ,rs.getString( "user1Name"), rs.getString("user2Name")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,8 +82,8 @@ public class Online implements Initializable {
 
         colRoom.setCellValueFactory(new PropertyValueFactory<>("roomNumb"));
         colEmpty.setCellValueFactory(new PropertyValueFactory<>("isEmpty"));
-        colUser1.setCellValueFactory(new PropertyValueFactory<>("user_fk"));
-        colUser2.setCellValueFactory(new PropertyValueFactory<>("user_fk2"));
+        colUser1.setCellValueFactory(new PropertyValueFactory<>("user1Name"));
+        colUser2.setCellValueFactory(new PropertyValueFactory<>("user2Name"));
 
         table.setItems(observableList);
     }

@@ -103,15 +103,18 @@ public class GameOperations {
         }
         String query4 = "";
         String query2 = "";
+        String query3 = "";
 
         if( isEmpty == 0 ) {
             query4 = "Update room Set user_fk = " + user_id  + " where roomNumb = " + room_id;
             query2 = "Update room Set user1Number = " + number + " where roomNumb = " + room_id;
+
         }
 
         else if( isEmpty == 1 ) {
             query4 = "Update room Set user_fk2 = " + user_id + " where roomNumb = " + room_id;
             query2 = "Update room Set user2Number = " + number + " where roomNumb = " + room_id;
+
         }
 
         statement.executeUpdate(query4);
@@ -190,12 +193,13 @@ public class GameOperations {
         }
 
         String query1 = "";
-        String query2 = "";
+        String query3 = "";
 
 
         if (user_id == user ){
             System.out.println(user2Numb + " bura  " + number);
             query1 = "Update room Set user1EstimatedNumb = " + number + " where roomNumb = " +room_id;
+            query3 = "Update room Set user1Name = " + userName + " where roomNumb = " + room_id;
             number1 = user2Numb;
             estimation = number;
 
@@ -204,6 +208,7 @@ public class GameOperations {
         } else if (user_id == user1){
             System.out.println(user1Numb + " bura  " + number);
             query1 = "Update room Set user2EstimatedNumb = " + number + " where roomNumb = " +room_id;
+            query3 = "Update room Set user2Name = " + userName + " where roomNumb = " + room_id;
             number1 = user1Numb;
             estimation = number;
 
@@ -211,6 +216,7 @@ public class GameOperations {
 
         }
         statement2.executeUpdate(query1);
+        statement.executeUpdate(query3);
     }
 
     public static Connection getConnection() throws SQLException{

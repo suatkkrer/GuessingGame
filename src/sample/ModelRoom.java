@@ -3,31 +3,31 @@ package sample;
 public class ModelRoom {
     int roomNumb;
     int isEmpty;
-    int user_fk;
-    int user_fk2;
+    String user1Name = null;
+    String user2Name = null;
 
-    public ModelRoom(int roomNumb, int isEmpty,int user_fk,int user_fk2) {
+    public ModelRoom(int roomNumb, int isEmpty,String user1Name,String user2Name) {
         this.roomNumb = roomNumb;
         this.isEmpty = isEmpty;
-        this.user_fk = user_fk;
-        this.user_fk2 = user_fk2;
+        this.user1Name = user1Name;
+        this.user2Name = user2Name;
 
     }
 
-    public int getUser_fk() {
-        return user_fk;
+    public String getUser1Name() {
+        return user1Name;
     }
 
-    public void setUser_fk(int user_fk) {
-        this.user_fk = user_fk;
+    public void setUser1Name(String user1Name) {
+        this.user1Name = user1Name;
     }
 
-    public int getUser_fk2() {
-        return user_fk2;
+    public String getUser2Name() {
+        return user2Name;
     }
 
-    public void setUser_fk2(int user_fk2) {
-        this.user_fk2 = user_fk2;
+    public void setUser2Name(String user2Name) {
+        this.user2Name = user2Name;
     }
 
     public int getRoomNumb() {
