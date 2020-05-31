@@ -1,0 +1,11 @@
+# GuessingGame
+# Purpose Of The Project
+The main purpose of this project is to provide the usage of the JavaFX, Database (MySQL), and Java, I have already used JavaFX and MySQL in my other projects but this project is the first project which I used both together. Its purpose is to help its users to entertain. In simply, users can play games with the computer or with other users. Once you open the application you will see the description of the application and there are 2 options, first one is to play with computer and the second one is play online, if you select first option computer will create 4 digits random number, after that, you will try to estimate the number, every time you make an estimation, the application will inform you about your application how many numbers are in correct and how many numbers are in the wrong place. Every estimation will remain in your textField, you can check your history and you can make a more certain estimation. You have 8 chances to make the right estimation, if you can not make the right estimation in 8 chances, you will lose the game. The second option is the play online, once you click the play online button you need to enter username and select an empty room, one room can contain maximum 2 players. The program will not allow you to select full room. After you select the room you need to enter your number which opponent user should estimate, after that, you need to wait for the opponent player, when opponent player enters the number, the game will start. There are no chances to estimate in online option unlike computer option, the game will continue until one player makes a correct estimation.
+# Main Page
+![WhatsApp Image 2020-05-30 at 18 05 59](https://user-images.githubusercontent.com/60031387/83333720-4ab50380-a2a2-11ea-80b6-e1dd5957b735.jpeg)
+# Play With Computer
+![WhatsApp Image 2020-05-30 at 18 09 05](https://user-images.githubusercontent.com/60031387/83333723-50124e00-a2a2-11ea-8120-975bb98a1b6e.jpeg)
+# Room Page
+![WhatsApp Image 2020-05-30 at 18 10 29](https://user-images.githubusercontent.com/60031387/83333725-530d3e80-a2a2-11ea-9ab4-eb02641096d1.jpeg)
+# Play Online
+![WhatsApp Image 2020-05-30 at 18 18 46](https://user-images.githubusercontent.com/60031387/83333726-556f9880-a2a2-11ea-8eae-9f9ffe16315f.jpeg)
